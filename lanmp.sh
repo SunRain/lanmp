@@ -148,16 +148,16 @@ cd $IN_SRC
 [ $IN_DIR = "/www/wdlinux" ] || IN_DIR_ME=1
 
 if [ $SERVER == "apache" ]; then
-    wget_down $HTTPD_DU
+    wget -c $HTTPD_DU
 elif [ $SERVER == "nginx" ]; then
-    wget_down $NGINX_DU $PHP_FPM $PCRE_DU
+    wget -c $NGINX_DU $PHP_FPM $PCRE_DU
 fi
 if [ $X86 == "1" ]; then
-    wget_down $ZENDX86_DU
+    wget -c $ZENDX86_DU
 else
-    wget_down $ZEND_DU
+    wget -c $ZEND_DU
 fi
-wget_down $MYSQL_DU $PHP_DU $VSFTPD_DU $PHPMYADMIN_DU
+wget -c $MYSQL_DU $PHP_DU $VSFTPD_DU $PHPMYADMIN_DU
 git clone https://github.com/eaccelerator/eaccelerator.git -b $EACCE_VER eaccelerator-$EACCE_VER
 
 function in_all {
