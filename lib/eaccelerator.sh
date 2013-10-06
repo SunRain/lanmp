@@ -10,9 +10,9 @@ function eaccelerator_ins {
     #rm -fr eaccelerator-$EACCE_VER/
     #tar xf eaccelerator-$EACCE_VER.tar.bz2 >$IN_LOG 2>&1
     cd eaccelerator-$EACCE_VER/
+    make_clean
     git add .
     git reset --hard
-    make_clean
     $IN_DIR/php/bin/phpize >>$IN_LOG 2>&1
     ./configure --enable-eaccelerator=shared \
         --with-eaccelerator-shared-memory \
