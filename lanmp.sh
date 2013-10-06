@@ -157,7 +157,8 @@ if [ $X86 == "1" ]; then
 else
     wget_down $ZEND_DU
 fi
-wget_down $MYSQL_DU $PHP_DU $EACCELERATOR_DU $VSFTPD_DU $PHPMYADMIN_DU
+wget_down $MYSQL_DU $PHP_DU $VSFTPD_DU $PHPMYADMIN_DU
+git clone https://github.com/eaccelerator/eaccelerator.git -b $EACCE_VER eaccelerator-$EACCE_VER
 
 function in_all {
     na_ins

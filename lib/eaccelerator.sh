@@ -7,9 +7,11 @@ function eaccelerator_ins {
     echo
     echo "installing eaccelerator..."
     cd $IN_SRC
-    rm -fr eaccelerator-$EACCE_VER/
-    tar xf eaccelerator-$EACCE_VER.tar.bz2 >$IN_LOG 2>&1
+    #rm -fr eaccelerator-$EACCE_VER/
+    #tar xf eaccelerator-$EACCE_VER.tar.bz2 >$IN_LOG 2>&1
     cd eaccelerator-$EACCE_VER/
+    git add .
+    git reset --hard
     make_clean
     $IN_DIR/php/bin/phpize >>$IN_LOG 2>&1
     ./configure --enable-eaccelerator=shared \
